@@ -1,0 +1,15 @@
+[Unit]
+Description=Lagonaki monthly report
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/root/lagonaki
+EnvironmentFile=/root/lagonaki/.env
+Environment=TZ=Europe/Moscow
+ExecStart=/usr/bin/flock -n /var/run/lagonaki-report.lock /usr/bin/node /root/lagonaki/scripts/monthly-report.js
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=lagonaki-report
