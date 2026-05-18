@@ -1,0 +1,12 @@
+[Unit]
+Description=Run Lagonaki report on 25th at 19:00 MSK
+
+[Timer]
+OnCalendar=*-*-25 19:00:00 Europe/Moscow
+Persistent=true
+RandomizedDelaySec=60
+AccuracySec=1s
+Unit=lagonaki-report.service
+
+[Install]
+WantedBy=timers.target
