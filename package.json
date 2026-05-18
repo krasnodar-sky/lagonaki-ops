@@ -1,0 +1,16 @@
+{
+  "name": "lagonaki-ops",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "report": "node scripts/monthly-report.js",
+    "report:test": "node scripts/monthly-report.js 2026-04-26 2026-05-25"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "googleapis": "^144.0.0",
+    "luxon": "^3.5.0",
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
