@@ -1,0 +1,20 @@
+[Unit]
+Description=Lagonaki Telegram Bot v2
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/lagonaki-bot
+EnvironmentFile=/root/lagonaki-bot/.env
+Environment=TZ=Europe/Moscow
+ExecStart=/usr/bin/node /root/lagonaki-bot/index.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=lagonaki-bot
+
+[Install]
+WantedBy=multi-user.target
